@@ -6,6 +6,7 @@
 require "rautomation"
 require "win32/screenshot"
 require "timeout"
+require "empl_stat_variables.rb"
 
 wait_timeout = 15
 
@@ -91,8 +92,9 @@ end
 ########### Set Empl Stat #######################################################################################################
 
 def set_emplstat
-require "empl_stat_variables.rb"
-@fast_path = fast_path
+
+include Empl
+@fast_path = Empl::FAST_PATH
 @effdt = "07012014"
 @empl_stat = "TERM"
 @PSFT_Action_Cd = "TER"
